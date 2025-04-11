@@ -4,71 +4,99 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
-  <title>Document</title>
+  <title>Home - Controle de Cinema</title>
+  <!-- Link para o arquivo de estilos do Bootstrap -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
-<body >
-  <div class="container-fluid bg-dark">
-    <ul class="nav justify-content-end">
-      <li class="nav-item"> <a class="nav-link"  href="./home.html">Home</a></li>
-      <li class="nav-item"> <a class="nav-link"  href="./salas.html">Salas</a></li>
-      <li class="nav-item"> <a class="nav-link"  href="./filmes.html">Filmes</a></li>
-      <li class="nav-item"> <a class="nav-link"  href="./sessoes.html">Sessões</a></li>
-      <li class="nav-item"> <a class="nav-link"  href="./ingressos.html">Ingressos</a></li>
-      <li class="nav-item"> <a class="nav-link disabled"  href="./login.html">Login</a></li>
-    </ul>
+<body>
+  <!-- Menu de navegação fixo usando Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- Marca ou logotipo; link para a própria página Home -->
+      <a class="navbar-brand" href="./home.html">Cinema Control</a>
+      <!-- Botão para o menu em dispositivos móveis -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Itens do menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <!-- Link para a Página Home (ativa) -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+          </li>
+          <!-- Link para Cadastro de Filmes -->
+          <li class="nav-item">
+            <a class="nav-link" href="./cadastro-filmes.html">Filmes</a>
+          </li>
+          <!-- Link para Cadastro de Salas -->
+          <li class="nav-item">
+            <a class="nav-link" href="./cadastro-salas.html">Salas</a>
+          </li>
+          <!-- Link para Cadastro de Sessões -->
+          <li class="nav-item">
+            <a class="nav-link" href="./cadastro-sessoes.html">Sessões</a>
+          </li>
+          <!-- Link para Venda de Ingressos -->
+          <li class="nav-item">
+            <a class="nav-link" href="./venda-ingressos.html">Ingressos</a>
+          </li>
+          <!-- (Opcional) Link para Login -->
+          <li class="nav-item">
+            <a class="nav-link disabled" href="./login.html">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Conteúdo principal da página Home -->
+  <div class="container mt-5">
+    <!-- Título de boas-vindas -->
+    <h1 class="mb-4">Bem-vindo ao Controle de Cinema!</h1>
+    <!-- Parágrafo explicativo sobre o sistema -->
+    <p class="lead">
+      Este sistema permite que você gerencie todas as operações do cinema de maneira prática e organizada. 
+      Através dele, você pode cadastrar filmes, salas, sessões e realizar a venda de ingressos.
+    </p>
+    <!-- Seção com alguns destaques ou informações adicionais -->
+    <div class="row mt-4">
+      <!-- Card 1: Cadastrar Filmes -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Cadastro de Filmes</h5>
+            <p class="card-text">Cadastre novos filmes com informações detalhadas, como título, descrição, gênero, duração e data de estreia.</p>
+            <a href="./cadastro-filmes.html" class="btn btn-primary">Acessar</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2: Cadastro de Salas -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Cadastro de Salas</h5>
+            <p class="card-text">Gerencie as salas do cinema, definindo capacidade e tipo (2D, 3D, IMAX).</p>
+            <a href="./cadastro-salas.html" class="btn btn-primary">Acessar</a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3: Cadastro de Sessões / Venda de Ingressos -->
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Sessões e Ingressos</h5>
+            <p class="card-text">Configure as sessões e disponibilize a venda dos ingressos, combinando dados de filmes e salas.</p>
+            <a href="./cadastro-sessoes.html" class="btn btn-primary">Sessões</a>
+            <a href="./venda-ingressos.html" class="btn btn-secondary ms-2">Ingressos</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   
-  <div class="container" >
-    <br>
-    <h3>Filmes em exibição</h3>
-    <br>
-    
-    <div class="row">
-
-      
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="card">
-          <img src="./img/senhor-dos-aneis.webp" alt="" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Senhor dos Aneis</h5>
-            <p class="cart-text">
-              Uma jornada épica pela Terra Média, onde Frodo e seus amigos enfrentam perigos inimagináveis para destruir o Um Anel e salvar o mundo das forças do mal lideradas por Sauron.
-            </p>
-            <a href="" class="btn btn-primary">Comprar Ingressos</a>
-          </div>
-        </div>
-      </div>
-      <!-- fim coluna -->
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="card">
-          <img src="./img/senhor-dos-aneis.webp" alt="" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Senhor dos Aneis</h5>
-            <p class="cart-text">
-              Uma jornada épica pela Terra Média, onde Frodo e seus amigos enfrentam perigos inimagináveis para destruir o Um Anel e salvar o mundo das forças do mal lideradas por Sauron.
-            </p>
-            <a href="" class="btn btn-primary">Comprar Ingressos</a>
-          </div>
-        </div>
-      </div>
-      <!-- fim coluna -->
-      <div class="col-12 col-sm-6 col-lg-4">
-        <div class="card">
-          <img src="./img/senhor-dos-aneis.webp" alt="" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Senhor dos Aneis</h5>
-            <p class="cart-text">
-              Uma jornada épica pela Terra Média, onde Frodo e seus amigos enfrentam perigos inimagináveis para destruir o Um Anel e salvar o mundo das forças do mal lideradas por Sauron.
-            </p>
-            <a href="" class="btn btn-primary">Comprar Ingressos</a>
-          </div>
-        </div>
-      </div>
-      <!-- fim coluna -->
-    
-    </div>
-    <!-- fim linha -->
-  </div>
+  <!-- Inclusão do script do Bootstrap para funcionalidades interativas, como o menu responsivo -->
   <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

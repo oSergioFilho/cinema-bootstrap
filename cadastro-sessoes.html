@@ -1,0 +1,127 @@
+<!-- html:5 cria o layout -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Cadastro de Sessões - Controle de Cinema</title>
+    <!-- Link para o arquivo de estilos do Bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+  </head>
+  <body>
+    <!-- Menu de navegação (Navbar) utilizando o Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <!-- Marca ou logo do sistema; link para a página inicial -->
+        <a class="navbar-brand" href="./home.html">Cinema Control</a>
+        <!-- Botão para exibir o menu em dispositivos móveis -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Itens do menu de navegação -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- Link para a Página Inicial -->
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">Home</a>
+            </li>
+            <!-- Link para Cadastro de Filmes -->
+            <li class="nav-item">
+              <a class="nav-link" href="./cadastro-filmes.html">Filmes</a>
+            </li>
+            <!-- Link para Cadastro de Salas -->
+            <li class="nav-item">
+              <a class="nav-link" href="./cadastro-salas.html">Salas</a>
+            </li>
+            <!-- Link para Cadastro de Sessões (página atual) -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./cadastro-sessoes.html">Sessões</a>
+            </li>
+            <!-- Link para Venda de Ingressos -->
+            <li class="nav-item">
+              <a class="nav-link" href="./venda-ingressos.html">Ingressos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- Conteúdo principal da página -->
+    <div class="container mt-5">
+      <!-- Título da seção de cadastro de sessões -->
+      <h1 class="mb-4">Cadastro de Sessões</h1>
+      
+      <!-- Formulário para cadastro de sessões -->
+      <!-- Neste arquivo, apenas a estrutura HTML está presente -->
+      <form id="formSessao">
+        <!-- Campo para selecionar o Filme -->
+        <div class="mb-3">
+          <label for="filme" class="form-label">Filme</label>
+          <!-- Select para escolher o filme. As opções deverão ser preenchidas dinamicamente via JavaScript com os filmes cadastrados -->
+          <select id="filme" class="form-select" required>
+            <option value="">Selecione um filme</option>
+            <!-- Exemplo: <option value="idFilme1">Filme Exemplo</option> -->
+          </select>
+        </div>
+        
+        <!-- Campo para selecionar a Sala -->
+        <div class="mb-3">
+          <label for="sala" class="form-label">Sala</label>
+          <!-- Select para escolher a sala. As opções deverão ser preenchidas dinamicamente via JavaScript com as salas cadastradas -->
+          <select id="sala" class="form-select" required>
+            <option value="">Selecione uma sala</option>
+            <!-- Exemplo: <option value="idSala1">Sala 1</option> -->
+          </select>
+        </div>
+        
+        <!-- Campo para inserir a Data e Hora da Sessão -->
+        <div class="mb-3">
+          <label for="dataHora" class="form-label">Data e Hora</label>
+          <!-- Input do tipo datetime-local para o usuário escolher data e hora -->
+          <input type="datetime-local" id="dataHora" class="form-control" required>
+        </div>
+        
+        <!-- Campo para inserir o Preço do Ingresso -->
+        <div class="mb-3">
+          <label for="preco" class="form-label">Preço</label>
+          <!-- Input numérico para definir o valor do ingresso -->
+          <input type="number" id="preco" class="form-control" required placeholder="Digite o preço">
+        </div>
+        
+        <!-- Campo para selecionar o Idioma da Sessão -->
+        <div class="mb-3">
+          <label for="idioma" class="form-label">Idioma</label>
+          <!-- Select com as opções de idioma -->
+          <select id="idioma" class="form-select" required>
+            <option value="">Selecione</option>
+            <option value="Dublado">Dublado</option>
+            <option value="Legendado">Legendado</option>
+          </select>
+        </div>
+        
+        <!-- Campo para selecionar o Formato da Sessão -->
+        <div class="mb-3">
+          <label for="formato" class="form-label">Formato</label>
+          <!-- Select com as opções de formato: 2D ou 3D -->
+          <select id="formato" class="form-select" required>
+            <option value="">Selecione</option>
+            <option value="2D">2D</option>
+            <option value="3D">3D</option>
+          </select>
+        </div>
+        
+        <!-- Botão para submeter o formulário -->
+        <button type="submit" class="btn btn-primary">Salvar Sessão</button>
+      </form>
+    </div>
+  
+    <!-- Inclusão do JavaScript do Bootstrap para funcionalidades interativas, como o menu responsivo -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <script src="./cadastro-sessoes.js"></script>
+  </body>
+  </html>

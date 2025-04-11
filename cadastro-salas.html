@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <title>Cadastro de Salas - Controle de Cinema</title>
+    <!-- Link para o CSS do Bootstrap, responsável pela estilização -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+  </head>
+  <body>
+    <!-- Menu de navegação (Navbar) com Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <!-- Nome ou logotipo do sistema; link para a página inicial -->
+        <a class="navbar-brand" href="./home.html">Cinema Control</a>
+        <!-- Botão que aparece em dispositivos móveis para exibir o menu -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Itens do menu -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <!-- Link para a Página Inicial -->
+            <li class="nav-item">
+              <a class="nav-link" href="./home.html">Home</a>
+            </li>
+            <!-- Link para Cadastro de Filmes -->
+            <li class="nav-item">
+              <a class="nav-link" href="./cadastro-filmes.html">Filmes</a>
+            </li>
+            <!-- Link para Cadastro de Salas (página atual) -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./cadastro-salas.html">Salas</a>
+            </li>
+            <!-- Link para Cadastro de Sessões -->
+            <li class="nav-item">
+              <a class="nav-link" href="./cadastro-sessoes.html">Sessões</a>
+            </li>
+            <!-- Link para Venda de Ingressos -->
+            <li class="nav-item">
+              <a class="nav-link" href="./venda-ingressos.html">Ingressos</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- Container principal para o conteúdo da página -->
+    <div class="container mt-5">
+      <!-- Título da seção de cadastro -->
+      <h1 class="mb-4">Cadastro de Salas</h1>
+  
+      <!-- Formulário para cadastro de salas -->
+      <!-- Neste exemplo, temos apenas a estrutura HTML -->
+      <form id="formSala">
+        <!-- Campo para inserir o Nome da Sala -->
+        <div class="mb-3">
+          <label for="nomeSala" class="form-label">Nome da Sala</label>
+          <!-- Input do tipo texto para o nome, com placeholder e campo obrigatório -->
+          <input type="text" id="nomeSala" class="form-control" required placeholder="Digite o nome da sala">
+        </div>
+  
+        <!-- Campo para inserir a Capacidade da Sala -->
+        <div class="mb-3">
+          <label for="capacidade" class="form-label">Capacidade</label>
+          <!-- Input do tipo number para a capacidade, com placeholder e campo obrigatório -->
+          <input type="number" id="capacidade" class="form-control" required placeholder="Digite a capacidade da sala">
+        </div>
+  
+        <!-- Campo para selecionar o Tipo de Sala -->
+        <div class="mb-3">
+          <label for="tipo" class="form-label">Tipo</label>
+          <!-- Select com as opções: 2D, 3D e IMAX, com campo obrigatório -->
+          <select id="tipo" class="form-select" required>
+            <option value="">Selecione</option>
+            <option value="2D">2D</option>
+            <option value="3D">3D</option>
+            <option value="IMAX">IMAX</option>
+          </select>
+        </div>
+  
+        <!-- Botão para submeter o formulário -->
+        <button type="submit" class="btn btn-primary">Salvar Sala</button>
+      </form>
+    </div>
+  
+    <!-- Inclusão do JavaScript do Bootstrap para funcionalidades interativas (ex.: menu responsivo) -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+
+    <script src="./cadastro-salas.js"></script>
+  </body>
+  </html>
