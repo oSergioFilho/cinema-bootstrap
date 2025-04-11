@@ -1,36 +1,74 @@
-<!-- html:5 cria o layout -->
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <title>Document</title>
 </head>
-
-<body>
-
-    <!--<button type="button" class="btn btn-link">Link</button> -->
-
-    <ul class="nav justify-content-end bg-dark">
-        <li class="nav-item"> <a class="nav-link" href="./home.html">Home </a> </li>
-        <li class="nav-item"> <a class="nav-link" href="./filmes.html">Filmes</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="./salas.html">Salas</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="./sessoes.html">Sessões</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="./ingressos.html">Ingressos</a> </li>
-        <li class="nav-item"> <a class="nav-link disabled" href="./login.html">Login</a> </li>
+<body >
+  <div class="container-fluid bg-dark">
+    <ul class="nav justify-content-end">
+      <li class="nav-item"> <a class="nav-link"  href="./home.html">Home</a></li>
+      <li class="nav-item"> <a class="nav-link"  href="./salas.html">Salas</a></li>
+      <li class="nav-item"> <a class="nav-link"  href="./filmes.html">Filmes</a></li>
+      <li class="nav-item"> <a class="nav-link"  href="./sessoes.html">Sessões</a></li>
+      <li class="nav-item"> <a class="nav-link"  href="./ingressos.html">Ingressos</a></li>
+      <li class="nav-item"> <a class="nav-link disabled"  href="./login.html">Login</a></li>
     </ul>
+  </div>
+  
+  <div class="container" >
     <br>
+    <h3>Filmes em exibição</h3>
     <br>
-    <div class="container">
-        <h4>home</h4>
+    
+    <div class="row">
+
+      
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card">
+          <img src="./img/senhor-dos-aneis.webp" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Senhor dos Aneis</h5>
+            <p class="cart-text">
+              Uma jornada épica pela Terra Média, onde Frodo e seus amigos enfrentam perigos inimagináveis para destruir o Um Anel e salvar o mundo das forças do mal lideradas por Sauron.
+            </p>
+            <a href="" class="btn btn-primary">Comprar Ingressos</a>
+          </div>
+        </div>
+      </div>
+      <!-- fim coluna -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card">
+          <img src="./img/senhor-dos-aneis.webp" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Senhor dos Aneis</h5>
+            <p class="cart-text">
+              Uma jornada épica pela Terra Média, onde Frodo e seus amigos enfrentam perigos inimagináveis para destruir o Um Anel e salvar o mundo das forças do mal lideradas por Sauron.
+            </p>
+            <a href="" class="btn btn-primary">Comprar Ingressos</a>
+          </div>
+        </div>
+      </div>
+      <!-- fim coluna -->
+      <div class="col-12 col-sm-6 col-lg-4">
+        <div class="card">
+          <img src="./img/senhor-dos-aneis.webp" alt="" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">Senhor dos Aneis</h5>
+            <p class="cart-text">
+              Uma jornada épica pela Terra Média, onde Frodo e seus amigos enfrentam perigos inimagináveis para destruir o Um Anel e salvar o mundo das forças do mal lideradas por Sauron.
+            </p>
+            <a href="" class="btn btn-primary">Comprar Ingressos</a>
+          </div>
+        </div>
+      </div>
+      <!-- fim coluna -->
+    
     </div>
-
-
-
-    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- fim linha -->
+  </div>
+  <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
