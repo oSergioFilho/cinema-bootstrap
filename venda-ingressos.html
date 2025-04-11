@@ -1,108 +1,112 @@
-<!-- html:5 cria o layout -->
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <title>Venda de Ingressos - Controle de Cinema</title>
-    
-  </head>
-  <body>
-    <!-- Menu de navegação (Navbar) utilizando o Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <!-- Nome ou logo do sistema; link para a Página Inicial -->
-        <a class="navbar-brand" href="./home.html">Cinema Control</a>
-        <!-- Botão para exibir ou ocultar o menu em dispositivos móveis -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- Itens do menu -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <!-- Link para a Página Inicial -->
-            <li class="nav-item">
-              <a class="nav-link" href="./home.html">Home</a>
-            </li>
-            <!-- Link para a página de Cadastro de Filmes -->
-            <li class="nav-item">
-              <a class="nav-link" href="./cadastro-filmes.html">Filmes</a>
-            </li>
-            <!-- Link para a página de Cadastro de Salas -->
-            <li class="nav-item">
-              <a class="nav-link" href="./cadastro-salas.html">Salas</a>
-            </li>
-            <!-- Link para a página de Cadastro de Sessões -->
-            <li class="nav-item">
-              <a class="nav-link" href="./cadastro-sessoes.html">Sessões</a>
-            </li>
-            <!-- Link para a página atual: Venda de Ingressos -->
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="./venda-ingressos.html">Ingressos</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  
-    <!-- Conteúdo principal da página -->
-    <div class="container mt-5">
-      <!-- Título da seção -->
-      <h1 class="mb-4">Venda de Ingressos</h1>
-      
-      <!-- Formulário para venda de ingressos -->
-      <!-- Este formulário apresenta somente a estrutura HTML; o preenchimento dinâmico deverá ser feito via JavaScript -->
-      <form id="formIngresso">
-        <!-- Campo para seleção da Sessão -->
-        <div class="mb-3">
-          <label for="sessao" class="form-label">Sessão</label>
-          <select id="sessao" class="form-select" required>
-            <option value="">Selecione uma sessão</option>
-            <!-- As opções deste select devem ser preenchidas dinamicamente com os dados das sessões disponíveis -->
-          </select>
-        </div>
-        
-        <!-- Campo para inserir o Nome do Cliente -->
-        <div class="mb-3">
-          <label for="nomeCliente" class="form-label">Nome do Cliente</label>
-          <input type="text" id="nomeCliente" class="form-control" required placeholder="Digite o nome do cliente">
-        </div>
-        
-        <!-- Campo para inserir o CPF -->
-        <div class="mb-3">
-          <label for="cpf" class="form-label">CPF</label>
-          <input type="text" id="cpf" class="form-control" required placeholder="Digite o CPF">
-        </div>
-        
-        <!-- Campo para inserir o Assento -->
-        <div class="mb-3">
-          <label for="assento" class="form-label">Assento</label>
-          <input type="text" id="assento" class="form-control" required placeholder="Ex.: A10">
-        </div>
-        
-        <!-- Campo para seleção do Tipo de Pagamento -->
-        <div class="mb-3">
-          <label for="tipoPagamento" class="form-label">Tipo de Pagamento</label>
-          <select id="tipoPagamento" class="form-select" required>
-            <option value="">Selecione</option>
-            <option value="Cartão">Cartão</option>
-            <option value="Pix">Pix</option>
-            <option value="Dinheiro">Dinheiro</option>
-          </select>
-        </div>
-        
-        <!-- Botão para submeter o formulário -->
-        <button type="submit" class="btn btn-primary">Confirmar Venda</button>
-      </form>
-    </div>
-    
-    <!-- Inclusão do JavaScript do Bootstrap para funcionalidades interativas, como o menu responsivo -->
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./venda-ingressos.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venda de Ingressos - Cinema Control</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Opcional: ajuste a exibição dos cards de filme */
+    .card-img-top {
+      object-fit: cover;
+      height: 200px;
+    }
+    /* Espaçamento para a seção de filmes */
+    #listaFilmes {
+      margin-top: 20px;
+    }
+    /* Espaçamento para a seção de sessões */
+    #listaSessoes {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
 
-  </body>
-  </html>
+  <!-- Menu de navegação fixo usando Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <!-- Logotipo; link para home -->
+      <a class="navbar-brand" href="./home.html">Cinema Control</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- Itens do menu -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./cadastro-filmes.html">Filmes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./cadastro-salas.html">Salas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./cadastro-sessoes.html">Sessões</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="./venda-ingressos.html">Ingressos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">Venda de Ingressos</h1>
+
+    <!-- Formulário de Venda de Ingressos -->
+    <form id="form-venda" class="row g-3 mb-5">
+      <div class="col-md-6 col-12">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" id="nome" class="form-control" required>
+      </div>
+
+      <div class="col-md-6 col-12">
+        <label for="sessao" class="form-label">Sessão (Filme - Horário)</label>
+        <select id="sessao" class="form-select" required>
+          <option value="">Selecione uma sessão</option>
+        </select>
+      </div>
+
+      <div class="col-md-4 col-12">
+        <label for="assento" class="form-label">Assento</label>
+        <input type="text" id="assento" class="form-control" required>
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary w-100">Vender Ingresso</button>
+      </div>
+    </form>
+
+    <h2 class="mb-4">Ingressos Vendidos</h2>
+
+    <!-- Tabela Responsiva para Ingressos Vendidos -->
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Filme</th>
+            <th>Data</th>
+            <th>Horário</th>
+            <th>Assento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- As linhas de vendas vão aparecer aqui -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Adicionando o Bootstrap JS (necessário para o menu de navegação funcionar) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Link para o JavaScript específico do arquivo -->
+  <script src="venda-ingressos.js"></script>
+</body>
+</html>

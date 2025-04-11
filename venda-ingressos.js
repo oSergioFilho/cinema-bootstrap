@@ -1,66 +1,59 @@
-// Aguarda até que o DOM esteja completamente carregado
-document.addEventListener('DOMContentLoaded', function() {
-    // Seleciona o elemento <select> que exibirá as sessões
-    const sessaoSelect = document.getElementById('sessao');
-    // Seleciona o formulário de venda de ingressos
-    const formIngresso = document.getElementById('formIngresso');
+// Função para carregar as sessões no select
+function carregarSessoes() {
+  const sessaoSelect = document.getElementById("sessao");
+  // Recuperar as sessões do localStorage (supondo que elas já estejam lá)
+  const sessoes = JSON.parse(localStorage.getItem("sessoes")) || [];
   
-    // Recupera o array de sessões armazenado no localStorage (se não houver, utiliza um array vazio)
-    const sessoes = JSON.parse(localStorage.getItem('sessoes')) || [];
-  
-    // Preenche o <select> com as sessões recuperadas
-    sessoes.forEach((sessao, index) => {
-      // Cria um elemento <option> para cada sessão
-      const option = document.createElement('option');
-      option.value = index; // Pode ser o índice que identifica a sessão
-      // Exibe informações relevantes da sessão (por exemplo, Filme, Sala e Data/Hora)
-      option.textContent = `${sessao.filme} - ${sessao.sala} - ${sessao.dataHora}`;
-      // Adiciona o elemento <option> ao <select>
-      sessaoSelect.appendChild(option);
-    });
-  
-    // Verifica se a URL contém um parâmetro "sessao" para pré-selecionar uma opção
-    const urlParams = new URLSearchParams(window.location.search);
-    const sessaoParam = urlParams.get('sessao');
-    if (sessaoParam !== null) {
-      sessaoSelect.value = sessaoParam;
-    }
-  
-    // Adiciona um listener para tratar o evento de submissão do formulário
-    formIngresso.addEventListener('submit', function(event) {
-      // Impede o comportamento padrão de recarregar a página
-      event.preventDefault();
-  
-      // Coleta os valores dos campos do formulário
-      const selectedSessao = document.getElementById('sessao').value;
-      const nomeCliente = document.getElementById('nomeCliente').value;
-      const cpf = document.getElementById('cpf').value;
-      const assento = document.getElementById('assento').value;
-      const tipoPagamento = document.getElementById('tipoPagamento').value;
-  
-      // Cria um objeto ingresso com os dados coletados
-      const ingresso = {
-        sessao: selectedSessao, // Aqui você pode salvar o índice ou outros dados de referência da sessão
-        nomeCliente: nomeCliente,
-        cpf: cpf,
-        assento: assento,
-        tipoPagamento: tipoPagamento
-      };
-  
-      // Recupera os ingressos já salvos no localStorage (ou cria um array vazio se não houver)
-      const ingressos = JSON.parse(localStorage.getItem('ingressos')) || [];
-  
-      // Adiciona o novo ingresso ao array
-      ingressos.push(ingresso);
-  
-      // Atualiza o localStorage com o array de ingressos convertido para JSON
-      localStorage.setItem('ingressos', JSON.stringify(ingressos));
-  
-      // Informa o usuário sobre o sucesso na venda do ingresso
-      alert('Ingresso vendido com sucesso!');
-  
-      // Limpa o formulário para nova entrada de dados
-      formIngresso.reset();
-    });
+  // Preencher o select com as sessões
+  sessoes.forEach(sessao => {
+    const option = document.createElement("option");
+    option.value = `${sessao.filme}-${sessao.horario}`;
+    option.textContent = `${sessao.filme} - ${sessao.horario}`;
+    sessaoSelect.appendChild(option);
   });
+}
+
+// Carregar as sessões quando a página for carregada
+window.onload = function() {
+  carregarSessoes();
+};
+
+// Manipulação do formulário de venda
+document.getElementById("form-venda").addEventListener("submit", function(event) {
+  event.preventDefault();
   
+  const nome = document.getElementById("nome").value;
+  const sessao = document.getElementById("sessao").value;
+  const assento = document.getElementById("assento").value;
+  
+  if (!nome || !sessao || !assento) {
+    alert("Preencha todos os campos.");
+    return;
+  }
+
+  const sessaoSelecionada = sessao.split("-");
+  const filme = sessaoSelecionada[0];
+  const horario = sessaoSelecionada[1];
+  
+  const ingresso = {
+    nome: nome,
+    filme: filme,
+    horario: horario,
+    assento: assento
+  };
+
+  // Adicionar o ingresso à tabela
+  const tbody = document.querySelector("tbody");
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td>${ingresso.nome}</td>
+    <td>${ingresso.filme}</td>
+    <td>${new Date().toLocaleDateString()}</td>
+    <td>${ingresso.horario}</td>
+    <td>${ingresso.assento}</td>
+  `;
+  tbody.appendChild(row);
+  
+  // Limpar o formulário
+  document.getElementById("form-venda").reset();
+});
