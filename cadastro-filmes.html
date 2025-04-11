@@ -1,80 +1,70 @@
-<!-- html:5 cria o layout -->
- 
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Filmes - Controle de Cinema</title>
-    <!-- Link para o arquivo de estilos do Bootstrap -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- Referência local para o Bootstrap CSS -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <style>
-      /* Estilo para limitar a largura e controlar a exibição da pré-visualização da imagem */
+      /* Limita a largura da imagem de pré-visualização */
       #preview {
         max-width: 300px;
         margin-top: 10px;
         display: none;
       }
+      /* Espaçamento para a tabela */
+      table {
+        margin-top: 20px;
+      }
     </style>
   </head>
   <body>
-    <!-- Menu de navegação fixo usando Bootstrap -->
+    <!-- Menu de Navegação -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-        <!-- Logotipo ou nome do sistema; link para a página inicial -->
         <a class="navbar-brand" href="./home.html">Cinema Control</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- Itens do menu -->
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="./home.html">Home</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <!-- Página atual marcada como ativa -->
               <a class="nav-link active" aria-current="page" href="./cadastro-filmes.html">Filmes</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./cadastro-salas.html">Salas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./cadastro-sessoes.html">Sessões</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./venda-ingressos.html">Ingressos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="./login.html">Login</a>
-            </li>
+            <li class="nav-item"><a class="nav-link" href="./cadastro-salas.html">Salas</a></li>
+            <li class="nav-item"><a class="nav-link" href="./cadastro-sessoes.html">Sessões</a></li>
+            <li class="nav-item"><a class="nav-link" href="./venda-ingressos.html">Ingressos</a></li>
           </ul>
         </div>
       </div>
     </nav>
-  
-    <!-- Conteúdo principal da página -->
+
+    <!-- Conteúdo Principal -->
     <div class="container mt-5">
       <h1 class="mb-4">Cadastro de Filmes</h1>
-      
-      <!-- Formulário de cadastro de filmes -->
+
+      <!-- Formulário de Cadastro de Filmes -->
       <form id="formFilme">
-        <!-- Campo para o título do filme -->
+        <!-- Campo Título -->
         <div class="mb-3">
           <label for="titulo" class="form-label">Título</label>
-          <input type="text" id="titulo" class="form-control" required placeholder="Digite o título do filme">
+          <input type="text" id="titulo" class="form-control" required placeholder="Digite o título do filme" />
         </div>
-        
-        <!-- Campo para a descrição do filme -->
+        <!-- Campo Descrição -->
         <div class="mb-3">
           <label for="descricao" class="form-label">Descrição</label>
           <textarea id="descricao" class="form-control" rows="3" required placeholder="Insira a descrição do filme"></textarea>
         </div>
-        
-        <!-- Campo para seleção do gênero -->
+        <!-- Campo Gênero -->
         <div class="mb-3">
           <label for="genero" class="form-label">Gênero</label>
           <select id="genero" class="form-select" required>
@@ -86,8 +76,7 @@
             <option value="Ficção Científica">Ficção Científica</option>
           </select>
         </div>
-        
-        <!-- Campo para a classificação indicativa -->
+        <!-- Campo Classificação -->
         <div class="mb-3">
           <label for="classificacao" class="form-label">Classificação Indicativa</label>
           <select id="classificacao" class="form-select" required>
@@ -100,35 +89,53 @@
             <option value="18">18</option>
           </select>
         </div>
-        
-        <!-- Campo para a duração do filme -->
+        <!-- Campo Duração -->
         <div class="mb-3">
           <label for="duracao" class="form-label">Duração (minutos)</label>
-          <input type="number" id="duracao" class="form-control" required placeholder="Ex.: 120">
+          <input type="number" id="duracao" class="form-control" required placeholder="Ex.: 120" />
         </div>
-        
-        <!-- Campo para a data de estreia -->
+        <!-- Campo Data de Estreia -->
         <div class="mb-3">
           <label for="dataEstreia" class="form-label">Data de Estreia</label>
-          <input type="date" id="dataEstreia" class="form-control" required>
+          <input type="date" id="dataEstreia" class="form-control" required />
         </div>
-        
-        <!-- Campo para upload da imagem do filme (Pôster) -->
+        <!-- Campo Upload de Imagem -->
         <div class="mb-3">
           <label for="imagem" class="form-label">Imagem do Filme (Pôster)</label>
-          <input type="file" id="imagem" class="form-control" accept="image/*">
-          <!-- Elemento para pré-visualização da imagem -->
-          <img id="preview" alt="Pré-visualização da Imagem">
+          <input type="file" id="imagem" class="form-control" accept="image/*" />
+          <img id="preview" alt="Pré-visualização da Imagem" />
         </div>
-        
-        <!-- Botão para submeter o formulário -->
-        <button type="submit" class="btn btn-primary">Salvar Filme</button>
+        <!-- Botões para Salvar e Cancelar Edição -->
+        <button type="submit" class="btn btn-primary" id="btnSalvar">Salvar Filme</button>
+        <button type="button" class="btn btn-secondary" id="btnCancelarEdit" style="display: none;">Cancelar Edição</button>
       </form>
+
+      <!-- Botão para atualizar manualmente a tabela -->
+      <button type="button" class="btn btn-info mt-4" id="btnAtualizarTabela">Atualizar Tabela</button>
+
+      <!-- Tabela para exibir os filmes cadastrados -->
+      <h2 class="mt-5">Filmes Cadastrados</h2>
+      <table class="table table-striped" id="tabelaFilmes">
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Descrição</th>
+            <th>Gênero</th>
+            <th>Classificação</th>
+            <th>Duração</th>
+            <th>Data de Estreia</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- As linhas serão inseridas dinamicamente via JavaScript -->
+        </tbody>
+      </table>
     </div>
-  
-    <!-- Inclusão do JavaScript do Bootstrap -->
+
+    <!-- Inclusão do Bootstrap Bundle JS (local) -->
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <!-- Link para o arquivo JavaScript externo que contém a lógica de processamento -->
+    <!-- Inclusão do arquivo JavaScript para o cadastro de filmes (no mesmo diretório) -->
     <script src="./cadastro-filmes.js"></script>
   </body>
-  </html>
+</html>
