@@ -1,43 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <title>Home - Controle de Cinema</title>
-
+  <style>
+    /* Opcional: ajuste a exibição dos cards de filme */
+    .card-img-top {
+      object-fit: cover;
+      height: 200px;
+    }
+    /* Espaçamento para a seção de filmes */
+    #listaFilmes {
+      margin-top: 20px;
+    }
+    /* Espaçamento para a seção de sessões */
+    #listaSessoes {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
   <!-- Menu de navegação fixo usando Bootstrap -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-      <!-- Marca ou logotipo; link para a própria página Home -->
+      <!-- Logotipo; link para home -->
       <a class="navbar-brand" href="./home.html">Cinema Control</a>
-      <!-- Botão para o menu em dispositivos móveis -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Itens do menu -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <!-- Link para a Página Home (ativa) -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
           </li>
-          <!-- Link para Cadastro de Filmes -->
           <li class="nav-item">
             <a class="nav-link" href="./cadastro-filmes.html">Filmes</a>
           </li>
-          <!-- Link para Cadastro de Salas -->
           <li class="nav-item">
             <a class="nav-link" href="./cadastro-salas.html">Salas</a>
           </li>
-          <!-- Link para Cadastro de Sessões -->
           <li class="nav-item">
             <a class="nav-link" href="./cadastro-sessoes.html">Sessões</a>
           </li>
-          <!-- Link para Venda de Ingressos -->
           <li class="nav-item">
             <a class="nav-link" href="./venda-ingressos.html">Ingressos</a>
           </li>
@@ -46,52 +55,72 @@
     </div>
   </nav>
   
-  <!-- Conteúdo principal da página Home -->
+  <!-- Conteúdo principal da Home -->
   <div class="container mt-5">
-    <!-- Título de boas-vindas -->
     <h1 class="mb-4">Bem-vindo ao Controle de Cinema!</h1>
-    <!-- Parágrafo explicativo sobre o sistema -->
+    
     <p class="lead">
-      Este sistema permite que você gerencie todas as operações do cinema de maneira prática e organizada. 
-      Através dele, você pode cadastrar filmes, salas, sessões e realizar a venda de ingressos.
+      Este sistema permite que você gerencie todas as operações do cinema de maneira prática e organizada.<br>
+      Você pode cadastrar filmes, salas, sessões e realizar a venda de ingressos.
     </p>
-    <!-- Seção com alguns destaques ou informações adicionais -->
+    
+    <!-- Seção com os cards estáticos de acesso às funcionalidades -->
     <div class="row mt-4">
-      <!-- Card 1: Cadastrar Filmes -->
+      <!-- Card: Cadastro de Filmes -->
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Cadastro de Filmes</h5>
-            <p class="card-text">Cadastre novos filmes com informações detalhadas, como título, descrição, gênero, duração e data de estreia.</p>
+            <p class="card-text">
+              Cadastre novos filmes com informações detalhadas, como título, descrição, gênero, duração e data de estreia.
+            </p>
             <a href="./cadastro-filmes.html" class="btn btn-primary">Acessar</a>
           </div>
         </div>
       </div>
-      <!-- Card 2: Cadastro de Salas -->
+      <!-- Card: Cadastro de Salas -->
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Cadastro de Salas</h5>
-            <p class="card-text">Gerencie as salas do cinema, definindo capacidade e tipo (2D, 3D, IMAX).</p>
+            <p class="card-text">
+              Gerencie as salas do cinema, definindo capacidade e tipo (2D, 3D, IMAX).
+            </p>
             <a href="./cadastro-salas.html" class="btn btn-primary">Acessar</a>
           </div>
         </div>
       </div>
-      <!-- Card 3: Cadastro de Sessões / Venda de Ingressos -->
+      <!-- Card: Sessões e Ingressos -->
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Sessões e Ingressos</h5>
-            <p class="card-text">Configure as sessões e disponibilize a venda dos ingressos, combinando dados de filmes e salas.</p>
+            <p class="card-text">
+              Configure as sessões e disponibilize a venda dos ingressos, combinando dados de filmes e salas.
+            </p>
             <a href="./cadastro-sessoes.html" class="btn btn-primary">Sessões</a>
             <a href="./venda-ingressos.html" class="btn btn-secondary ms-2">Ingressos</a>
           </div>
         </div>
       </div>
     </div>
+    
+    <!-- Seção para listar os Filmes Cadastrados -->
+    <h2 class="mt-5">Filmes Cadastrados</h2>
+    <div id="listaFilmes" class="row gy-4">
+      <!-- Os filmes serão carregados aqui dinamicamente -->
+    </div>
+    
+    <!-- Seção para listar as Sessões Disponíveis -->
+    <h2 class="mt-5">Sessões Disponíveis</h2>
+    <div id="listaSessoes" class="list-group">
+      <!-- As sessões serão carregadas aqui dinamicamente -->
+    </div>
   </div>
   
-  <!-- Inclusão do script do Bootstrap para funcionalidades interativas, como o menu responsivo -->
+  <!-- Inclusão do Bootstrap Bundle JS (local) -->
   <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- Inclusão do arquivo JavaScript para carregar os filmes e sessões na Home -->
+  <script src="./home.js"></script>
 </body>
 </html>
